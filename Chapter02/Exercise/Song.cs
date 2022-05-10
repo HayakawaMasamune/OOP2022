@@ -11,9 +11,11 @@ namespace Exercise {
         public string ArtistName { get; set; }
         public int Length { get; set; }
 
-        public Song()
+        public Song(string Title,string ArtistName,int Length)
         {
-
+            this.Title = Title;
+            this.ArtistName = ArtistName;
+            this.Length = Length;
         }
     }
 }

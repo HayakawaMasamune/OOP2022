@@ -46,9 +46,35 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesCalculator\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="SalesCalculator\obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="SalesCalculator\Program.cs" />
+    <Compile Include="SalesCalculator\Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesCalculator\Sale.cs" />
+    <Compile Include="SalesCalculator\SalesCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="SalesCalculator\App.config" />
+    <None Include="SalesCalculator\bin\Debug\Sales.csv" />
+    <None Include="SalesCalculator\bin\Debug\SalesCalculator.exe.config" />
+    <None Include="SalesCalculator\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="SalesCalculator\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="SalesCalculator\obj\Debug\SalesCalculator.csproj.AssemblyReference.cache" />
+    <None Include="SalesCalculator\obj\Debug\SalesCalculator.csproj.CoreCompileInputs.cache" />
+    <None Include="SalesCalculator\Sales.csv" />
+    <None Include="SalesCalculator\SalesCalculator.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SalesCalculator\bin\Debug\SalesCalculator.exe" />
+    <Content Include="SalesCalculator\bin\Debug\SalesCalculator.pdb" />
+    <Content Include="SalesCalculator\obj\Debug\SalesCalculator.csproj.FileListAbsolute.txt" />
+    <Content Include="SalesCalculator\obj\Debug\SalesCalculator.exe" />
+    <Content Include="SalesCalculator\obj\Debug\SalesCalculator.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SalesCalculator\bin\Release\" />
+    <Folder Include="SalesCalculator\obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

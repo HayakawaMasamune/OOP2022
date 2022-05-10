@@ -19,7 +19,7 @@ namespace DistanceConverter {
                
             }
         }
-
+        //フィートからメートルへの対応表を出力
         private static void PrintMeterToFeetList(int start,int stop)
         {
             FeetConverter fc = new FeetConverter();

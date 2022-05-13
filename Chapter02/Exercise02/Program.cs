@@ -20,7 +20,7 @@ namespace Exercise02 {
         //フィートからメートルへの対応表を出力
         private static void PrintMeterToInchList(int start, int stop)
         {
-            InchConverter fc = new InchConverter();
+         //   InchConverter fc = new InchConverter();
             for (int inch = 1; inch <= 10; inch++)
             {
                 double meter = fc.ToMeter(inch);

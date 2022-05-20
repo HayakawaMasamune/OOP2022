@@ -13,13 +13,16 @@ namespace Program {
             "Tokyo","New Delhi","Bangkok","London","Paris","Berlin","Canberra","HongKong",
 
         };
-            var names = list.FindAll(s => s.Length <= 5);
-            names.ForEach(s => Console.WriteLine(s));
+          var query = list.Select(s =>s.Length);
 
-           // foreach(var s in names)
-            //{
-             //   Console.WriteLine(s);
-            //}
+            foreach(var s in query)
+            {
+                Console.WriteLine(s);
+            }
+            
+
+            
+            
         }
     }
 }

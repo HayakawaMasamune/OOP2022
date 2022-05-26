@@ -14,7 +14,7 @@ namespace Exercise02 {
                 new YearMonth (1980,2),
                 new YearMonth (1990,4),
                 new YearMonth (2000,6),
-                new YearMonth (2010,8),
+                new YearMonth (2010,2),
                 new YearMonth (2020,10),
             };
 
@@ -27,17 +27,21 @@ namespace Exercise02 {
             Console.WriteLine("----");
 
             Exercise2_5(ymCollection);
+            Console.WriteLine("----");
 
             Exercise2_6(ymCollection);
 
         }
         private static void Exercise2_6(YearMonth[] ymCollection)
         {
-            foreach (var ym in ymCollection.OrderByDescending(ym => ym.Year)) {
+            foreach (var ym in ymCollection.Where(ym => DateTime.IsLeapYear(ym.Year))) {
                 Console.WriteLine(ym);
             }
+
+            var date = ymCollection.Max(ym => ym.Month);
+            Console.WriteLine(date);
         }
-        //4.2.3
+        //4.2.3 
         static YearMonth FindFirst21C(YearMonth[] yms)
         {
             foreach (var y in yms) {

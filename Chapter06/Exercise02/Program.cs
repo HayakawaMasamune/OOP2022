@@ -59,29 +59,33 @@ namespace Exercise02 {
             var average = books.Where(a => a.Title.Contains("C#"))
                 .Average(a => a.Pages);
             Console.WriteLine(average);
-
-
-
         }
 
         private static void Exercise2_4(List<Book> books)
         {
-            
+            var title = books.FirstOrDefault(x => x.Price >= 4000);
+            if (title != null)
+                Console.WriteLine(title.Title);
         }
 
         private static void Exercise2_5(List<Book> books)
         {
-           
+            var pages = books.Where(n => n.Price < 4000).Max(n => n.Pages);
+            Console.WriteLine(pages);
         }
 
         private static void Exercise2_6(List<Book> books)
         {
-            
+            var title = books.Where(p => p.Pages >= 400);
+            foreach (var item in title.OrderByDescending(p => p.Price)) {
+                Console.WriteLine(item.Title + item.Price);
+            }
         }
 
         private static void Exercise2_7(List<Book> books)
         {
-           
+            var book = books.Where(t => t.Title.Contains("C#")).Any(t => t.Price <= 500);
+
         }
         class Book {
             public string Title { get; set; }

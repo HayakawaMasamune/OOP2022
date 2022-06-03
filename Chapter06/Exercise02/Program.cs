@@ -39,7 +39,13 @@ namespace Exercise02 {
             Console.WriteLine("-----");
 
             Exercise2_7(books);
+
+            Console.WriteLine("-----");
+
+            Exercise2_8(books);
         }
+
+       
 
         private static void Exercise2_1(List<Book> books)
         {
@@ -84,9 +90,19 @@ namespace Exercise02 {
 
         private static void Exercise2_7(List<Book> books)
         {
-            var book = books.Where(t => t.Title.Contains("C#")).Any(t => t.Price <= 500);
+            var book = books.Where(t => t.Title.Contains("C#")&& t.Pages <= 500);
+            foreach (var item in book) {
+                Console.WriteLine(item.Title);
+            }
+         }
+        private static void Exercise2_8(List<Book> books)
+        {
+            foreach (var item in books.Select((b,i)=>new { i, b.Title })) {
+                Console.WriteLine((item.i + 1)+"冊目:"+ item.Title);
+            }
 
         }
+
         class Book {
             public string Title { get; set; }
             public int Price { get; set; }

@@ -53,6 +53,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FormAppSample", "FormAppSam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ssmple0607", "FormAppSample\Ssmple0607\Ssmple0607.csproj", "{B1E3B46E-68CD-4732-A905-4041AEA23AD8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssressBook", "FormAppSample\AssressBook\AssressBook.csproj", "{EB4F6DD9-66E3-450A-9CC5-9CF4B8BBD47A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{B1E3B46E-68CD-4732-A905-4041AEA23AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1E3B46E-68CD-4732-A905-4041AEA23AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1E3B46E-68CD-4732-A905-4041AEA23AD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB4F6DD9-66E3-450A-9CC5-9CF4B8BBD47A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB4F6DD9-66E3-450A-9CC5-9CF4B8BBD47A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB4F6DD9-66E3-450A-9CC5-9CF4B8BBD47A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB4F6DD9-66E3-450A-9CC5-9CF4B8BBD47A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,6 +165,7 @@ Global
 		{59BA5FA4-7814-482C-B76F-B7275D4A2E3E} = {73B2495A-CAC0-48E8-A63C-9B7B1D2906E9}
 		{B797305E-A283-456A-A6D6-E798AD2D617D} = {ABF70C9E-0ADE-4A92-8230-78469098578B}
 		{B1E3B46E-68CD-4732-A905-4041AEA23AD8} = {ABF70C9E-0ADE-4A92-8230-78469098578B}
+		{EB4F6DD9-66E3-450A-9CC5-9CF4B8BBD47A} = {ABF70C9E-0ADE-4A92-8230-78469098578B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23338A3E-8B00-4CED-B684-352A54601271}

@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace Ssmple0607 {
     partial class nudNum {
         /// <summary>
@@ -26,143 +28,114 @@ namespace Ssmple0607 {
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.Waru = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button = new System.Windows.Forms.Button();
-            this.nudNum1 = new System.Windows.Forms.NumericUpDown();
-            this.nudNum2 = new System.Windows.Forms.NumericUpDown();
-            this.nudAns = new System.Windows.Forms.NumericUpDown();
-            this.nudAma = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNum1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNum2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAns)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAma)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.num1 = new System.Windows.Forms.NumericUpDown();
+            this.maxNum = new System.Windows.Forms.NumericUpDown();
+            this.minNum = new System.Windows.Forms.NumericUpDown();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.num1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maxNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minNum)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 12);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "label1";
+            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button1.Location = new System.Drawing.Point(381, 267);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(149, 37);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "乱数取得";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // Waru
+            // num1
             // 
-            this.Waru.AutoSize = true;
-            this.Waru.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Waru.Location = new System.Drawing.Point(300, 99);
-            this.Waru.Name = "Waru";
-            this.Waru.Size = new System.Drawing.Size(54, 37);
-            this.Waru.TabIndex = 5;
-            this.Waru.Text = "÷";
+            this.num1.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.num1.Location = new System.Drawing.Point(165, 267);
+            this.num1.Name = "num1";
+            this.num1.Size = new System.Drawing.Size(120, 44);
+            this.num1.TabIndex = 1;
             // 
-            // label2
+            // maxNum
             // 
-            this.label2.AllowDrop = true;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(499, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 37);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "＝";
+            this.maxNum.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.maxNum.Location = new System.Drawing.Point(381, 144);
+            this.maxNum.Name = "maxNum";
+            this.maxNum.Size = new System.Drawing.Size(120, 44);
+            this.maxNum.TabIndex = 1;
             // 
-            // label3
+            // minNum
             // 
-            this.label3.AllowDrop = true;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(721, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 37);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "あまり";
+            this.minNum.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.minNum.Location = new System.Drawing.Point(381, 71);
+            this.minNum.Name = "minNum";
+            this.minNum.Size = new System.Drawing.Size(120, 44);
+            this.minNum.TabIndex = 1;
             // 
-            // button
+            // textBox1
             // 
-            this.button.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button.Location = new System.Drawing.Point(432, 203);
-            this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(171, 78);
-            this.button.TabIndex = 6;
-            this.button.Text = "計算";
-            this.button.UseVisualStyleBackColor = true;
-            this.button.Click += new System.EventHandler(this.button_Click);
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 19);
+            this.textBox1.TabIndex = 2;
             // 
-            // nudNum1
+            // textBox2
             // 
-            this.nudNum1.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.nudNum1.Location = new System.Drawing.Point(145, 100);
-            this.nudNum1.Name = "nudNum1";
-            this.nudNum1.Size = new System.Drawing.Size(120, 44);
-            this.nudNum1.TabIndex = 7;
-            this.nudNum1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.textBox2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox2.Location = new System.Drawing.Point(165, 71);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 31);
+            this.textBox2.TabIndex = 3;
+            this.textBox2.Text = "最小値";
             // 
-            // nudNum2
+            // textBox3
             // 
-            this.nudNum2.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.nudNum2.Location = new System.Drawing.Point(360, 103);
-            this.nudNum2.Name = "nudNum2";
-            this.nudNum2.Size = new System.Drawing.Size(120, 44);
-            this.nudNum2.TabIndex = 8;
-            // 
-            // nudAns
-            // 
-            this.nudAns.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.nudAns.Location = new System.Drawing.Point(595, 103);
-            this.nudAns.Name = "nudAns";
-            this.nudAns.Size = new System.Drawing.Size(120, 44);
-            this.nudAns.TabIndex = 9;
-            // 
-            // nudAma
-            // 
-            this.nudAma.Font = new System.Drawing.Font("MS UI Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.nudAma.Location = new System.Drawing.Point(860, 103);
-            this.nudAma.Name = "nudAma";
-            this.nudAma.Size = new System.Drawing.Size(120, 44);
-            this.nudAma.TabIndex = 10;
+            this.textBox3.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBox3.Location = new System.Drawing.Point(165, 144);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 31);
+            this.textBox3.TabIndex = 3;
+            this.textBox3.Text = "最大値";
             // 
             // nudNum
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1005, 525);
-            this.Controls.Add(this.nudAma);
-            this.Controls.Add(this.nudAns);
-            this.Controls.Add(this.nudNum2);
-            this.Controls.Add(this.nudNum1);
-            this.Controls.Add(this.button);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.Waru);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(575, 375);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.minNum);
+            this.Controls.Add(this.maxNum);
+            this.Controls.Add(this.num1);
+            this.Controls.Add(this.button1);
             this.Name = "nudNum";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.nudNum2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nudNum1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNum2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAns)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAma)).EndInit();
+            this.Load += new System.EventHandler(this.nudNum_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.num1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maxNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        private void nudNum_Load(object sender, EventArgs e)
+        {
+           
+        }
+
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label Waru;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button;
-        private System.Windows.Forms.NumericUpDown nudNum1;
-        private System.Windows.Forms.NumericUpDown nudNum2;
-        private System.Windows.Forms.NumericUpDown nudAns;
-        private System.Windows.Forms.NumericUpDown nudAma;
+        private System.Windows.Forms.NumericUpDown num;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown num1;
+        private System.Windows.Forms.NumericUpDown maxNum;
+        private System.Windows.Forms.NumericUpDown minNum;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
 

@@ -9,42 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ssmple0607 {
-    public partial class nudNum : Form {
+    public partial class nudNum : Form 
+        
+        {
+
+        Random r = new Random();
         public nudNum()
         {
             InitializeComponent();
         }
-
-        private void button_Click(object sender, EventArgs e)
+        private void nud_Load(object sender, EventArgs e)
         {
-            if (nudNum2.Value != 0) {
 
-                nudAns.Value = nudNum1.Value / nudNum2.Value;
-
-                nudAma.Value = nudNum1.Value % nudNum2.Value;
-
-            } else {
-                MessageBox.Show("0で割り切れません", "エラー",
-
-               MessageBoxButtons.OK,
-               MessageBoxIcon.Error);
-            }
         }
 
-        private void btnum1_TextChanged(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
+            
+
+          num1.Value = r.Next(minValue: (int)minNum.Value, maxValue: (int)maxNum.Value + 1);
+
            
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nudNum2_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

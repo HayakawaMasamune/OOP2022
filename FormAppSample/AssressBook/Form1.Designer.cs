@@ -1,5 +1,5 @@
 ﻿
-namespace AssressBook {
+namespace AddressBook {
     partial class Form1 {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -31,7 +31,7 @@ namespace AssressBook {
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.d = new System.Windows.Forms.DataGridView();
+            this.dgvPersons = new System.Windows.Forms.DataGridView();
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbMailAddress = new System.Windows.Forms.TextBox();
             this.tbAddress = new System.Windows.Forms.TextBox();
@@ -41,12 +41,14 @@ namespace AssressBook {
             this.cbWork = new System.Windows.Forms.CheckBox();
             this.cbOther = new System.Windows.Forms.CheckBox();
             this.btAddPerson = new System.Windows.Forms.Button();
-            this.btPicture = new System.Windows.Forms.PictureBox();
+            this.pbPicture = new System.Windows.Forms.PictureBox();
             this.btPictureOpen = new System.Windows.Forms.Button();
             this.btPictureClear = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.d)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btPicture)).BeginInit();
+            this.btupdata = new System.Windows.Forms.Button();
+            this.btDelete = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +75,7 @@ namespace AssressBook {
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MS UI Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(130, 130);
+            this.label3.Location = new System.Drawing.Point(130, 105);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 27);
             this.label3.TabIndex = 0;
@@ -99,14 +101,17 @@ namespace AssressBook {
             this.label5.TabIndex = 0;
             this.label5.Text = "グループ";
             // 
-            // d
+            // dgvPersons
             // 
-            this.d.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.d.Location = new System.Drawing.Point(12, 248);
-            this.d.Name = "d";
-            this.d.RowTemplate.Height = 21;
-            this.d.Size = new System.Drawing.Size(776, 190);
-            this.d.TabIndex = 1;
+            this.dgvPersons.AllowUserToAddRows = false;
+            this.dgvPersons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPersons.Location = new System.Drawing.Point(22, 248);
+            this.dgvPersons.Name = "dgvPersons";
+            this.dgvPersons.ReadOnly = true;
+            this.dgvPersons.RowTemplate.Height = 21;
+            this.dgvPersons.Size = new System.Drawing.Size(776, 190);
+            this.dgvPersons.TabIndex = 1;
+            this.dgvPersons.Click += new System.EventHandler(this.dgvPersons_Click);
             // 
             // tbName
             // 
@@ -144,7 +149,7 @@ namespace AssressBook {
             // cbFamily
             // 
             this.cbFamily.AutoSize = true;
-            this.cbFamily.Location = new System.Drawing.Point(231, 210);
+            this.cbFamily.Location = new System.Drawing.Point(232, 211);
             this.cbFamily.Name = "cbFamily";
             this.cbFamily.Size = new System.Drawing.Size(48, 16);
             this.cbFamily.TabIndex = 3;
@@ -184,20 +189,21 @@ namespace AssressBook {
             // btAddPerson
             // 
             this.btAddPerson.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btAddPerson.Location = new System.Drawing.Point(599, 200);
+            this.btAddPerson.Location = new System.Drawing.Point(580, 200);
             this.btAddPerson.Name = "btAddPerson";
-            this.btAddPerson.Size = new System.Drawing.Size(107, 32);
+            this.btAddPerson.Size = new System.Drawing.Size(65, 32);
             this.btAddPerson.TabIndex = 4;
             this.btAddPerson.Text = "追加";
             this.btAddPerson.UseVisualStyleBackColor = true;
+            this.btAddPerson.Click += new System.EventHandler(this.btAddPerson_Click);
             // 
-            // btPicture
+            // pbPicture
             // 
-            this.btPicture.Location = new System.Drawing.Point(599, 31);
-            this.btPicture.Name = "btPicture";
-            this.btPicture.Size = new System.Drawing.Size(140, 125);
-            this.btPicture.TabIndex = 5;
-            this.btPicture.TabStop = false;
+            this.pbPicture.Location = new System.Drawing.Point(599, 31);
+            this.pbPicture.Name = "pbPicture";
+            this.pbPicture.Size = new System.Drawing.Size(140, 125);
+            this.pbPicture.TabIndex = 5;
+            this.pbPicture.TabStop = false;
             // 
             // btPictureOpen
             // 
@@ -207,6 +213,7 @@ namespace AssressBook {
             this.btPictureOpen.TabIndex = 6;
             this.btPictureOpen.Text = "開く...";
             this.btPictureOpen.UseVisualStyleBackColor = true;
+            this.btPictureOpen.Click += new System.EventHandler(this.btPictureOpen_Click);
             // 
             // btPictureClear
             // 
@@ -216,10 +223,33 @@ namespace AssressBook {
             this.btPictureClear.TabIndex = 6;
             this.btPictureClear.Text = "クリア";
             this.btPictureClear.UseVisualStyleBackColor = true;
+            this.btPictureClear.Click += new System.EventHandler(this.btPictureClear_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btupdata
+            // 
+            this.btupdata.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btupdata.Location = new System.Drawing.Point(651, 200);
+            this.btupdata.Name = "btupdata";
+            this.btupdata.Size = new System.Drawing.Size(65, 32);
+            this.btupdata.TabIndex = 4;
+            this.btupdata.Text = "更新";
+            this.btupdata.UseVisualStyleBackColor = true;
+            this.btupdata.Click += new System.EventHandler(this.btupdata_Click);
+            // 
+            // btDelete
+            // 
+            this.btDelete.Font = new System.Drawing.Font("MS UI Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btDelete.Location = new System.Drawing.Point(722, 200);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(65, 32);
+            this.btDelete.TabIndex = 4;
+            this.btDelete.Text = "削除";
+            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // Form1
             // 
@@ -228,7 +258,9 @@ namespace AssressBook {
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btPictureClear);
             this.Controls.Add(this.btPictureOpen);
-            this.Controls.Add(this.btPicture);
+            this.Controls.Add(this.pbPicture);
+            this.Controls.Add(this.btDelete);
+            this.Controls.Add(this.btupdata);
             this.Controls.Add(this.btAddPerson);
             this.Controls.Add(this.cbOther);
             this.Controls.Add(this.cbWork);
@@ -238,16 +270,17 @@ namespace AssressBook {
             this.Controls.Add(this.tbAddress);
             this.Controls.Add(this.tbMailAddress);
             this.Controls.Add(this.tbName);
-            this.Controls.Add(this.d);
+            this.Controls.Add(this.dgvPersons);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.d)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btPicture)).EndInit();
+            this.Text = "住所録アプリ";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,7 +293,7 @@ namespace AssressBook {
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView d;
+        private System.Windows.Forms.DataGridView dgvPersons;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbMailAddress;
         private System.Windows.Forms.TextBox tbAddress;
@@ -270,10 +303,12 @@ namespace AssressBook {
         private System.Windows.Forms.CheckBox cbWork;
         private System.Windows.Forms.CheckBox cbOther;
         private System.Windows.Forms.Button btAddPerson;
-        private System.Windows.Forms.PictureBox btPicture;
+        private System.Windows.Forms.PictureBox pbPicture;
         private System.Windows.Forms.Button btPictureOpen;
         private System.Windows.Forms.Button btPictureClear;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button btupdata;
+        private System.Windows.Forms.Button btDelete;
     }
 }
 

@@ -17,11 +17,6 @@ namespace AddressBook {
             InitializeComponent();
             dgvPersons.DataSource = listPerson;
 
-
-            if (listPerson.Count() == 0) {
-                btDelete.Enabled = false;
-                btupdata.Enabled = false;
-            }
         }
 
         private void btPictureOpen_Click(object sender, EventArgs e)
@@ -35,7 +30,14 @@ namespace AddressBook {
 
         private void btAddPerson_Click(object sender, EventArgs e)
         {
-            Person newPerson = new Person {
+            //氏名が未入力なら登録しない
+            if(String.IsNullOrWhiteSpace(tbName.Text)) {
+                MessageBox.Show("氏名が入力されていません");
+                return;
+
+            }
+            Person newPerson = new Person 
+            {
                 Name = tbName.Text,
                 MailAddress = tbMailAddress.Text,
                 Address = tbAddress.Text,
@@ -49,6 +51,22 @@ namespace AddressBook {
 
             listPerson.Add(newPerson);
             dgvPersons.Rows[dgvPersons.RowCount - 1].Selected = true;
+
+            if (listPerson.Count() == 0) {
+                btDelete.Enabled = false;
+                btupdata.Enabled = false;
+            }
+
+            /* if (cbCompany.FindStringExact(cbCompany.Text) == -1) { 
+
+                 //コンボボックスに会社名を登録する
+                 cbCompany.Items.Add(cbCompany.Text);
+             }*/
+
+            if (!cbCompany.Items.Contains(cbCompany.Text)) {
+
+                cbCompany.Items.Add(cbCompany.Text);
+            }
         }
 
         //チェックボックスにセットされている値リストとして取り出す
@@ -129,7 +147,7 @@ namespace AddressBook {
             listPerson[dgvPersons.CurrentRow.Index].Company = tbCompany.Text;
             listPerson[dgvPersons.CurrentRow.Index].listGroup = GetCheckBoxGroup();
             listPerson[dgvPersons.CurrentRow.Index].Picture = pbPicture.Image;
-            dgvPersons.Refresh();
+            dgvPersons.Refresh();//データグリッドビュー
 
 
         }
@@ -155,6 +173,16 @@ namespace AddressBook {
         {
             btDelete.Enabled = false;
             btupdata.Enabled = false;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvPersons_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 

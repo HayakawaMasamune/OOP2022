@@ -47,6 +47,7 @@ namespace AddressBook {
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btupdata = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
+            this.cbCompany = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.SuspendLayout();
@@ -111,6 +112,7 @@ namespace AddressBook {
             this.dgvPersons.RowTemplate.Height = 21;
             this.dgvPersons.Size = new System.Drawing.Size(776, 190);
             this.dgvPersons.TabIndex = 1;
+            this.dgvPersons.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPersons_CellContentClick);
             this.dgvPersons.Click += new System.EventHandler(this.dgvPersons_Click);
             // 
             // tbName
@@ -141,9 +143,9 @@ namespace AddressBook {
             // tbCompany
             // 
             this.tbCompany.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbCompany.Location = new System.Drawing.Point(220, 162);
+            this.tbCompany.Location = new System.Drawing.Point(-12, 135);
             this.tbCompany.Name = "tbCompany";
-            this.tbCompany.Size = new System.Drawing.Size(265, 31);
+            this.tbCompany.Size = new System.Drawing.Size(136, 31);
             this.tbCompany.TabIndex = 2;
             // 
             // cbFamily
@@ -251,11 +253,22 @@ namespace AddressBook {
             this.btDelete.UseVisualStyleBackColor = true;
             this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
+            // cbCompany
+            // 
+            this.cbCompany.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.cbCompany.FormattingEnabled = true;
+            this.cbCompany.Location = new System.Drawing.Point(220, 162);
+            this.cbCompany.Name = "cbCompany";
+            this.cbCompany.Size = new System.Drawing.Size(265, 32);
+            this.cbCompany.TabIndex = 7;
+            this.cbCompany.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbCompany);
             this.Controls.Add(this.btPictureClear);
             this.Controls.Add(this.btPictureOpen);
             this.Controls.Add(this.pbPicture);
@@ -309,6 +322,7 @@ namespace AddressBook {
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btupdata;
         private System.Windows.Forms.Button btDelete;
+        private System.Windows.Forms.ComboBox cbCompany;
     }
 }
 

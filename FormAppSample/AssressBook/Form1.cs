@@ -42,10 +42,12 @@ namespace AddressBook {
                 Name = tbName.Text,
                 MailAddress = tbMailAddress.Text,
                 Address = tbAddress.Text,
-                Company = tbCompany.Text,
+                Company = cbCompany.Text,
                 Picture = pbPicture.Image,
                 listGroup = GetCheckBoxGroup(),
-
+                Registration = dateTimePicker1.Value,
+                kindNumber = kindNumberType(),
+                TellNumber = tbAddNumber.Text,
 
 
             };
@@ -66,6 +68,12 @@ namespace AddressBook {
             
         
         }
+
+        private Person.kindNumberType kindNumberType()
+        {
+            
+        }
+
         //コンボボックスに会社名を登録する
         private void setCbCompany(string company)
         {
@@ -98,6 +106,7 @@ namespace AddressBook {
             return listGroup;
 
         }
+        
 
         private void btPictureClear_Click(object sender, EventArgs e)
         {
@@ -112,8 +121,11 @@ namespace AddressBook {
             tbName.Text = listPerson[index].Name;
             tbMailAddress.Text = listPerson[index].MailAddress;
             tbAddress.Text = listPerson[index].Address;
-            tbCompany.Text = listPerson[index].Company;
+            cbCompany.Text = listPerson[index].Company;
             pbPicture.Image = listPerson[index].Picture;
+            dateTimePicker1.Value =
+                listPerson[index].Registration.Year > 1900 ? listPerson[index].Registration : DateTime.Today;
+            tbAddNumber.Text = listPerson[index].TellNumber;
 
             groupCheckBoxAllClear();
 
@@ -212,11 +224,6 @@ namespace AddressBook {
                 }
             }
         }
-
-        private void tbCompany_TextChanged(object sender, EventArgs e)
-        {
-
-        }
       
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
@@ -248,6 +255,21 @@ namespace AddressBook {
             }
 
             EnabledCheck();//マスク処理呼び出し
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbHome_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }

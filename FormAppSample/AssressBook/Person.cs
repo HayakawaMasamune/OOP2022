@@ -39,7 +39,7 @@ namespace AddressBook {
         public List<GroupType> listGroup{ get; set; }
 
         [System.ComponentModel.DisplayName("番号種別")]
-        public kindNumberType kindNumber { get; set; }
+        public KindNumberType KindNumber { get; set; }
 
         [System.ComponentModel.DisplayName("電話番号")]
         public string TellNumber { get; set; }
@@ -58,9 +58,10 @@ namespace AddressBook {
             仕事,
             その他
         }
-        public enum kindNumberType{
+        public enum KindNumberType{
             自宅,
             携帯,
+            その他,
         }
 
 

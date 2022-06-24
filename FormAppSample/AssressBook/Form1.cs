@@ -46,8 +46,9 @@ namespace AddressBook {
                 Picture = pbPicture.Image,
                 listGroup = GetCheckBoxGroup(),
                 Registration = dateTimePicker1.Value,
-                kindNumber = kindNumberType(),
-                TellNumber = tbAddNumber.Text,
+                KindNumber = GetRadioButtonKindNumber(),
+                TellNumber = tbTellNumber.Text,
+                
 
 
             };
@@ -69,10 +70,21 @@ namespace AddressBook {
         
         }
 
-        private Person.kindNumberType kindNumberType()
+        private Person.KindNumberType GetRadioButtonKindNumber()
         {
-            
+            var listGroup = Person.KindNumberType.その他;
+
+            if (cbHome.Checked) {
+                listGroup = Person.KindNumberType.自宅;
+            }
+            if (cbMobile.Checked) {
+                listGroup = Person.KindNumberType.携帯;
+            }
+            return listGroup;
         }
+
+        
+
 
         //コンボボックスに会社名を登録する
         private void setCbCompany(string company)
@@ -89,10 +101,10 @@ namespace AddressBook {
         {
             var listGroup = new List<Person.GroupType>();
 
-            if (cbFamily.Checked) {
+            if (cbHome.Checked) {
                 listGroup.Add(Person.GroupType.家族);
             }
-            if (cbFriend.Checked) {
+            if (cbMobile.Checked) {
                 listGroup.Add(Person.GroupType.友人);
             }
             if (cbWork.Checked) {
@@ -106,6 +118,9 @@ namespace AddressBook {
             return listGroup;
 
         }
+
+
+
         
 
         private void btPictureClear_Click(object sender, EventArgs e)
@@ -125,34 +140,50 @@ namespace AddressBook {
             pbPicture.Image = listPerson[index].Picture;
             dateTimePicker1.Value =
                 listPerson[index].Registration.Year > 1900 ? listPerson[index].Registration : DateTime.Today;
-            tbAddNumber.Text = listPerson[index].TellNumber;
+            tbTellNumber.Text = listPerson[index].TellNumber;
 
             groupCheckBoxAllClear();
 
-            foreach (var group in listPerson[index].listGroup) {
+           
+                foreach (var group in listPerson[index].listGroup) {
 
-                switch (group) {
-                    case Person.GroupType.家族:
-                        cbFamily.Checked = true;
-                        break;
-                    case Person.GroupType.友人:
-                        cbFriend.Checked = true;
-                        break;
-                    case Person.GroupType.仕事:
-                        cbWork.Checked = true;
-                        break;
-                    case Person.GroupType.その他:
-                        cbOther.Checked = true;
-                        break;
-                    default:
-                        break;
+                    switch (group) {
+                        case Person.GroupType.家族:
+                            cbHome.Checked = true;
+                            break;
+                        case Person.GroupType.友人:
+                            cbMobile.Checked = true;
+                            break;
+                        case Person.GroupType.仕事:
+                            cbWork.Checked = true;
+                            break;
+                        case Person.GroupType.その他:
+                            cbOther.Checked = true;
+                            break;
+                        default:
+                            break;
+                    }
                 }
+            
+
+            //番号種別チェック処理
+            switch (listPerson[index].KindNumber) {
+                case Person.KindNumberType.自宅:
+                    rbHome.Checked = true;
+                    break;
+                case Person.KindNumberType.携帯:
+                    rbMobile.Checked = true;
+                    break;
+                case Person.KindNumberType.その他:
+                    break;
+                default:
+                    break;
             }
         }
         //グループのチェックボックスをオールクリア
         private void groupCheckBoxAllClear()
         {
-            cbFamily.Checked = cbFriend.Checked = cbWork.Checked = cbOther.Checked = false;
+            cbHome.Checked = cbMobile.Checked = cbWork.Checked = cbOther.Checked = false;
         }
 
         //更新ボタンが押された時の処理

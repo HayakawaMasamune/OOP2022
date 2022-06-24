@@ -35,8 +35,8 @@ namespace AddressBook {
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbMailAddress = new System.Windows.Forms.TextBox();
             this.tbAddress = new System.Windows.Forms.TextBox();
-            this.cbFamily = new System.Windows.Forms.CheckBox();
-            this.cbFriend = new System.Windows.Forms.CheckBox();
+            this.cbHome = new System.Windows.Forms.CheckBox();
+            this.cbMobile = new System.Windows.Forms.CheckBox();
             this.cbWork = new System.Windows.Forms.CheckBox();
             this.cbOther = new System.Windows.Forms.CheckBox();
             this.btAddPerson = new System.Windows.Forms.Button();
@@ -54,9 +54,9 @@ namespace AddressBook {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbHome = new System.Windows.Forms.RadioButton();
             this.rbMobile = new System.Windows.Forms.RadioButton();
-            this.tbAddNumber = new System.Windows.Forms.TextBox();
+            this.rbHome = new System.Windows.Forms.RadioButton();
+            this.tbTellNumber = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -117,6 +117,7 @@ namespace AddressBook {
             this.dgvPersons.AllowUserToAddRows = false;
             this.dgvPersons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersons.Location = new System.Drawing.Point(104, 317);
+            this.dgvPersons.MultiSelect = false;
             this.dgvPersons.Name = "dgvPersons";
             this.dgvPersons.ReadOnly = true;
             this.dgvPersons.RowTemplate.Height = 21;
@@ -150,25 +151,25 @@ namespace AddressBook {
             this.tbAddress.Size = new System.Drawing.Size(333, 52);
             this.tbAddress.TabIndex = 2;
             // 
-            // cbFamily
+            // cbHome
             // 
-            this.cbFamily.AutoSize = true;
-            this.cbFamily.Location = new System.Drawing.Point(248, 213);
-            this.cbFamily.Name = "cbFamily";
-            this.cbFamily.Size = new System.Drawing.Size(48, 16);
-            this.cbFamily.TabIndex = 3;
-            this.cbFamily.Text = "家族";
-            this.cbFamily.UseVisualStyleBackColor = true;
+            this.cbHome.AutoSize = true;
+            this.cbHome.Location = new System.Drawing.Point(248, 213);
+            this.cbHome.Name = "cbHome";
+            this.cbHome.Size = new System.Drawing.Size(48, 16);
+            this.cbHome.TabIndex = 3;
+            this.cbHome.Text = "家族";
+            this.cbHome.UseVisualStyleBackColor = true;
             // 
-            // cbFriend
+            // cbMobile
             // 
-            this.cbFriend.AutoSize = true;
-            this.cbFriend.Location = new System.Drawing.Point(330, 213);
-            this.cbFriend.Name = "cbFriend";
-            this.cbFriend.Size = new System.Drawing.Size(48, 16);
-            this.cbFriend.TabIndex = 3;
-            this.cbFriend.Text = "友人";
-            this.cbFriend.UseVisualStyleBackColor = true;
+            this.cbMobile.AutoSize = true;
+            this.cbMobile.Location = new System.Drawing.Point(330, 213);
+            this.cbMobile.Name = "cbMobile";
+            this.cbMobile.Size = new System.Drawing.Size(48, 16);
+            this.cbMobile.TabIndex = 3;
+            this.cbMobile.Text = "友人";
+            this.cbMobile.UseVisualStyleBackColor = true;
             // 
             // cbWork
             // 
@@ -330,6 +331,16 @@ namespace AddressBook {
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "種別";
             // 
+            // rbMobile
+            // 
+            this.rbMobile.AutoSize = true;
+            this.rbMobile.Location = new System.Drawing.Point(82, 15);
+            this.rbMobile.Name = "rbMobile";
+            this.rbMobile.Size = new System.Drawing.Size(47, 16);
+            this.rbMobile.TabIndex = 1;
+            this.rbMobile.Text = "携帯";
+            this.rbMobile.UseVisualStyleBackColor = true;
+            // 
             // rbHome
             // 
             this.rbHome.AutoSize = true;
@@ -343,24 +354,14 @@ namespace AddressBook {
             this.rbHome.UseVisualStyleBackColor = true;
             this.rbHome.CheckedChanged += new System.EventHandler(this.rbHome_CheckedChanged);
             // 
-            // rbMobile
+            // tbTellNumber
             // 
-            this.rbMobile.AutoSize = true;
-            this.rbMobile.Location = new System.Drawing.Point(82, 15);
-            this.rbMobile.Name = "rbMobile";
-            this.rbMobile.Size = new System.Drawing.Size(47, 16);
-            this.rbMobile.TabIndex = 1;
-            this.rbMobile.Text = "携帯";
-            this.rbMobile.UseVisualStyleBackColor = true;
-            // 
-            // tbAddNumber
-            // 
-            this.tbAddNumber.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.tbAddNumber.Location = new System.Drawing.Point(220, 278);
-            this.tbAddNumber.Name = "tbAddNumber";
-            this.tbAddNumber.Size = new System.Drawing.Size(232, 31);
-            this.tbAddNumber.TabIndex = 2;
-            this.tbAddNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbTellNumber.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbTellNumber.Location = new System.Drawing.Point(220, 278);
+            this.tbTellNumber.Name = "tbTellNumber";
+            this.tbTellNumber.Size = new System.Drawing.Size(232, 31);
+            this.tbTellNumber.TabIndex = 2;
+            this.tbTellNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Form1
             // 
@@ -381,10 +382,10 @@ namespace AddressBook {
             this.Controls.Add(this.btAddPerson);
             this.Controls.Add(this.cbOther);
             this.Controls.Add(this.cbWork);
-            this.Controls.Add(this.cbFriend);
-            this.Controls.Add(this.cbFamily);
+            this.Controls.Add(this.cbMobile);
+            this.Controls.Add(this.cbHome);
             this.Controls.Add(this.tbAddress);
-            this.Controls.Add(this.tbAddNumber);
+            this.Controls.Add(this.tbTellNumber);
             this.Controls.Add(this.tbMailAddress);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.dgvPersons);
@@ -417,8 +418,8 @@ namespace AddressBook {
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.TextBox tbMailAddress;
         private System.Windows.Forms.TextBox tbAddress;
-        private System.Windows.Forms.CheckBox cbFamily;
-        private System.Windows.Forms.CheckBox cbFriend;
+        private System.Windows.Forms.CheckBox cbHome;
+        private System.Windows.Forms.CheckBox cbMobile;
         private System.Windows.Forms.CheckBox cbWork;
         private System.Windows.Forms.CheckBox cbOther;
         private System.Windows.Forms.Button btAddPerson;
@@ -438,7 +439,7 @@ namespace AddressBook {
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbMobile;
         private System.Windows.Forms.RadioButton rbHome;
-        private System.Windows.Forms.TextBox tbAddNumber;
+        private System.Windows.Forms.TextBox tbTellNumber;
     }
 }
 

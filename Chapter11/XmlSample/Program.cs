@@ -17,7 +17,7 @@ namespace XmlSample {
     
 
                  var xdoc = XDocument.Load(stream);
-                var xNews = xdoc.Root.Descendants("item").Select(x => x.Element("title"));
+                var xNews = xdoc.Root.Descendants("item").Select(x => (string)x.Element("title"));
 
                 foreach (var date in xNews) {
                     Console.WriteLine(date);

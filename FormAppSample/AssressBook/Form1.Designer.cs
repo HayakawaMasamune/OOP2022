@@ -57,6 +57,7 @@ namespace AddressBook {
             this.rbMobile = new System.Windows.Forms.RadioButton();
             this.rbHome = new System.Windows.Forms.RadioButton();
             this.tbTellNumber = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -363,6 +364,14 @@ namespace AddressBook {
             this.tbTellNumber.TabIndex = 2;
             this.tbTellNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -395,6 +404,8 @@ namespace AddressBook {
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "住所録アプリ";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -440,6 +451,7 @@ namespace AddressBook {
         private System.Windows.Forms.RadioButton rbMobile;
         private System.Windows.Forms.RadioButton rbHome;
         private System.Windows.Forms.TextBox tbTellNumber;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
 

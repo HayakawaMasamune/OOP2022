@@ -9,11 +9,16 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace CarReportSystem {
     public partial class Form1 : Form {
+
+        Settings settings = new Settings();
         
         BindingList<CarReport> listCarReport = new BindingList<CarReport>();
+        int mode = 0;
         public Form1()
         {
             InitializeComponent();
@@ -162,6 +167,37 @@ namespace CarReportSystem {
 
             }
         }
+
+        private void ファイルFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 色の設定ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (cdColorSelect.ShowDialog() == DialogResult.OK) {
+                BackColor = cdColorSelect.Color;
+            }
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            using (var writer = XmlWriter.Create("settings.xml")) {
+                var serializer = new XmlSerializer(settings.GetType());
+                serializer.Serialize(writer, settings);
+            }
+            EnabledCheck();//マスク処理呼び出し
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            using (var writer = XmlWriter.Create("settings.xml"))
+                {
+                var color = new XmlSerializer(settings.GetType());
+
+                serializer.Serialize(writer, settings);
+            };
+        }
     }
 }
-

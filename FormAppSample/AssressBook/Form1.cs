@@ -303,8 +303,8 @@ namespace AddressBook {
         {
 
         }
-    }
 
+        
     //例
     //tbName.Text = listPerson[0].Name:
 

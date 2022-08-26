@@ -15,23 +15,23 @@ namespace Test01 {
         //メソッドの概要： 点数データを読み込み、Studentオブジェクトのリストを返す
         private static IEnumerable<Student> ReadScore(string filePath) {
 
-            List<Student> scores = new List<Student>();
+            List<Student> students = new List<Student>();
             string[] lines = File.ReadAllLines(filePath);
             foreach (string line in lines) {
                 string[] items = line.Split(',');
-                Student score = new Student {
+                Student student = new Student {
                     Name = items[0],
                     Subject = items[1],
                     Score = int.Parse(items[2])
                 };
-                scores.Add(score);
+                students.Add(student);
             }
-            return scores;
+            return students;
 
         }
 
         //メソッドの概要：科目別の点数を集計する 
-        public IDictionary<string, int> GetPerStudentScore() {
+        public Dictionary<string, int> GetPerStudentScore() {
 
             var dict = new Dictionary<string, int>();
             foreach (var score in _score) {

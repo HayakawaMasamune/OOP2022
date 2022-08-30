@@ -9,6 +9,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPattern", "DesignPatt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonSample", "..\..\DesignPattern\SingletonSample\SingletonSample.csproj", "{889DB3BC-ECDE-4DBD-A615-D19684922B17}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter17", "Chapter17", "{CEB34C03-F777-4E8B-AE0B-5C5F389C69E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section01", "..\..\Chapter17\Section01\Section01.csproj", "{93FEBE69-6554-4AD0-B498-A8D207BDBB59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplateMethod", "TemplateMethod", "{8F43FD85-C5B1-4628-AC81-BF2663B95B5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFileProcessor", "..\..\Chapter17\TemplateMethod\TextFileProcessor\TextFileProcessor.csproj", "{E5F3FB57-122B-42AF-A3C2-DD3EF790D5D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineCounter", "..\..\Chapter17\TemplateMethod\LineCounter\LineCounter.csproj", "{44AFD022-961E-4B45-8C6F-A0E48213A39D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise1", "Exercise1\Exercise1.csproj", "{144DB647-A47C-4500-A716-3E364DB7C3D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +35,33 @@ Global
 		{889DB3BC-ECDE-4DBD-A615-D19684922B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{889DB3BC-ECDE-4DBD-A615-D19684922B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{889DB3BC-ECDE-4DBD-A615-D19684922B17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93FEBE69-6554-4AD0-B498-A8D207BDBB59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93FEBE69-6554-4AD0-B498-A8D207BDBB59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93FEBE69-6554-4AD0-B498-A8D207BDBB59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93FEBE69-6554-4AD0-B498-A8D207BDBB59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F3FB57-122B-42AF-A3C2-DD3EF790D5D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F3FB57-122B-42AF-A3C2-DD3EF790D5D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F3FB57-122B-42AF-A3C2-DD3EF790D5D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F3FB57-122B-42AF-A3C2-DD3EF790D5D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44AFD022-961E-4B45-8C6F-A0E48213A39D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44AFD022-961E-4B45-8C6F-A0E48213A39D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44AFD022-961E-4B45-8C6F-A0E48213A39D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44AFD022-961E-4B45-8C6F-A0E48213A39D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{144DB647-A47C-4500-A716-3E364DB7C3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{144DB647-A47C-4500-A716-3E364DB7C3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{144DB647-A47C-4500-A716-3E364DB7C3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{144DB647-A47C-4500-A716-3E364DB7C3D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{889DB3BC-ECDE-4DBD-A615-D19684922B17} = {7A601054-CE9B-4F17-A40D-404C457A5348}
+		{93FEBE69-6554-4AD0-B498-A8D207BDBB59} = {CEB34C03-F777-4E8B-AE0B-5C5F389C69E1}
+		{8F43FD85-C5B1-4628-AC81-BF2663B95B5F} = {CEB34C03-F777-4E8B-AE0B-5C5F389C69E1}
+		{E5F3FB57-122B-42AF-A3C2-DD3EF790D5D7} = {8F43FD85-C5B1-4628-AC81-BF2663B95B5F}
+		{44AFD022-961E-4B45-8C6F-A0E48213A39D} = {8F43FD85-C5B1-4628-AC81-BF2663B95B5F}
+		{144DB647-A47C-4500-A716-3E364DB7C3D4} = {CEB34C03-F777-4E8B-AE0B-5C5F389C69E1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3EF0A006-C104-4578-A3A3-9C9BBED45C82}

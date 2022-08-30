@@ -13,5 +13,5 @@ namespace Exercise1 {
             TextProcessor.Run<Text>(@"C:\Users\infosys\source\repos\OOP2022\Chapter12\Section02\Program.cs");
         }
     }
-    }
+    
 }

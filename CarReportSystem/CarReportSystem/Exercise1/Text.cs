@@ -16,6 +16,7 @@ namespace Exercise1 {
         {
             string s = new string(line.Select(n => (conv.ContainsKey(n) ? conv[n] : n)).ToArray());
 
+
         }
         //string s = new string(text.Select(n => (conv.ContainsKey(n) ? conv[n] : n)).ToArray());
 

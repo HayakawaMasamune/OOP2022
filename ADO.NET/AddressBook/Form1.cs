@@ -21,10 +21,7 @@ namespace AddressBook {
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Validate();
-            this.adressTableBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.infosys202219DataSet);
-
+            pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void btConect_Click(object sender, EventArgs e)
@@ -41,7 +38,6 @@ namespace AddressBook {
             addressTableDataGridView.CurrentRow.Cells[3].Value = tbTel.Text;
             addressTableDataGridView.CurrentRow.Cells[4].Value = tbMail.Text;
             addressTableDataGridView.CurrentRow.Cells[5].Value = tbMemo.Text;
-            //addressTableDataGridView.CurrentRow.Cells[5].Value = tbMemo.Text;
             addressTableDataGridView.CurrentRow.Cells[6].Value = ImageToByteArray(pbImage.Image);
 
 
@@ -65,9 +61,13 @@ namespace AddressBook {
         }
         public static Image ByteArrayToImage(byte[] b)
         {
-            ImageConverter imgconv = new ImageConverter();
-            Image img = (Image)imgconv.ConvertFrom(b);
-            return img;
+            try {
+                ImageConverter imgconv = new ImageConverter();
+                Image img = (Image)imgconv.ConvertFrom(b);
+                return img;
+            } catch {
+                return null;
+            }
         }
 
         // Imageオブジェクトをバイト配列に変換
@@ -83,7 +83,12 @@ namespace AddressBook {
             DataRow newRow = infosys202219DataSet.AdressTable.NewRow();
             newRow[1] = tbName.Text;
             newRow[2] = tbAddress.Text;
+            newRow[3] = tbTel.Text;
+            newRow[4] = tbMail.Text;
+            newRow[5] = tbMemo.Text;
+            newRow[6] = pbImage.Image;
 
+            //データセット
             infosys202219DataSet.AdressTable.Rows.Add(newRow);
             this.adressTableTableAdapter.Update(this.infosys202219DataSet.AdressTable);
 
@@ -106,6 +111,7 @@ namespace AddressBook {
                 pbImage.Image = null;
         }
 
+        //エラー回避
         private void addressTableDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
 
@@ -115,6 +121,22 @@ namespace AddressBook {
         {
             adressTableTableAdapter.FillByName(infosys202219DataSet.AdressTable, tbSerchName.Text);
 
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btVersion_Click(object sender, EventArgs e)
+        {
+            new Version().ShowDialog();
+        }
+
+        private void btClear_Click(object sender, EventArgs e)
+        {
+            tbName.Text = tbAddress.Text = tbTel.Text = tbMail.Text = tbMemo.Text =  null;
+            pbImage.Image = null;
         }
     }
 }

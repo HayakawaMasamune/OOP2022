@@ -138,5 +138,10 @@ namespace AddressBook {
             tbName.Text = tbAddress.Text = tbTel.Text = tbMail.Text = tbMemo.Text =  null;
             pbImage.Image = null;
         }
+
+        private void pbImage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

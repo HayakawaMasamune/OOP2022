@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarReportSystem_", "\\172.16.45.1\学生共有\#infosys2022\休んだ人へ\CarReportSystem\CarReportSystem\CarReportSystem_.csproj", "{2BD9D8B0-4DE9-4F70-95B7-0762F1A63F63}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPattern", "DesignPattern", "{7A601054-CE9B-4F17-A40D-404C457A5348}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonSample", "..\..\DesignPattern\SingletonSample\SingletonSample.csproj", "{889DB3BC-ECDE-4DBD-A615-D19684922B17}"
@@ -37,16 +35,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test01", "..\..\Test202206\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test02", "..\..\Test202206\TestProject\Test02\Test02.csproj", "{E461C0A8-8900-485C-B520-E929BA33F712}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter13", "Chapter13", "{7D5A895C-FEA1-4F97-B91C-FD6D687E29F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleEntityFramework", "..\..\..\..\..\OneDrive - 学校法人太田アカデミー\デスクトップ\OOP2022\Chapter13\SampleEntityFramework\SampleEntityFramework.csproj", "{0E5AB437-2381-46B0-B123-20E62A7BD7CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2BD9D8B0-4DE9-4F70-95B7-0762F1A63F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2BD9D8B0-4DE9-4F70-95B7-0762F1A63F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2BD9D8B0-4DE9-4F70-95B7-0762F1A63F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2BD9D8B0-4DE9-4F70-95B7-0762F1A63F63}.Release|Any CPU.Build.0 = Release|Any CPU
 		{889DB3BC-ECDE-4DBD-A615-D19684922B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{889DB3BC-ECDE-4DBD-A615-D19684922B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{889DB3BC-ECDE-4DBD-A615-D19684922B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -87,6 +85,10 @@ Global
 		{E461C0A8-8900-485C-B520-E929BA33F712}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E461C0A8-8900-485C-B520-E929BA33F712}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E461C0A8-8900-485C-B520-E929BA33F712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E5AB437-2381-46B0-B123-20E62A7BD7CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E5AB437-2381-46B0-B123-20E62A7BD7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E5AB437-2381-46B0-B123-20E62A7BD7CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E5AB437-2381-46B0-B123-20E62A7BD7CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +106,7 @@ Global
 		{66ED0611-F4E9-45E0-AF1D-19B220107CB4} = {85B9CBFC-7739-4051-943B-9723466470E0}
 		{2BFACDC3-F44D-4199-8498-F5C3C4AC0335} = {EB7BFA3B-D2B3-4C81-A223-7CC85F6EC918}
 		{E461C0A8-8900-485C-B520-E929BA33F712} = {EB7BFA3B-D2B3-4C81-A223-7CC85F6EC918}
+		{0E5AB437-2381-46B0-B123-20E62A7BD7CF} = {7D5A895C-FEA1-4F97-B91C-FD6D687E29F7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3EF0A006-C104-4578-A3A3-9C9BBED45C82}

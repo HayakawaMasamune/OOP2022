@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Reflection;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace CollarChecker {
@@ -27,13 +28,6 @@ namespace CollarChecker {
                 .Select(i => new MyColor() { Color = (Color)i.GetValue(null), Name = i.Name }).ToArray();
         }
 
-        /// <summary>
-        /// 色と色名を保持するクラス
-        /// </summary>
-        public class MyColor {
-            public Color Color { get; set; }
-            public string Name { get; set; }
-        }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
@@ -42,12 +36,27 @@ namespace CollarChecker {
 
         private void Border_Loaded(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
-        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        private void ComboBox_SelectionChanged(object sender,SelectionChangedEventArgs e)
         {
-            //colorLabel.Background = new SolidColorBrush(colorbox.SelectedItem);
+            var mycolor = (MyColor)((ComboBox)sender).SelectedItem;
+            var color = mycolor.Color;
+            var name = mycolor.Name;
+            colorLabel.Background = new SolidColorBrush(Color.FromRgb(color.R, color.G, color.B));
+            RedSlider.Value = color.R;
+            GreenSlider.Value = color.G;
+            BlueSlider.Value = color.B;
         }
+       
+    }
+
+    /// <summary>
+    /// 色と色名を保持するクラス
+    /// </summary>
+    public class MyColor {
+        public Color Color { get; set; }
+        public string Name { get; set; }
     }
 }

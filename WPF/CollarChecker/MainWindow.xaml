@@ -13,35 +13,50 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column ="0">
-            <Label Name="Color" Grid.Row="0" />
+            <Label Name="Color" Grid.Row="0" Grid.Column="0" Background="AliceBlue" Margin="30"/>
         </Grid>
 
-            <Grid Grid.Column ="1">
+        <Grid Grid.Column ="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="44"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Grid.Row ="0" Text="R" HorizontalAlignment="Center"/>
             <Slider x:Name="RedSlider" Grid.Column ="1" Maximum="255"/>
             <TextBox Grid.Column="2" Grid.Row ="0" Text ="{Binding ElementName=RedSlider,Path=Value,UpdateSourceTrigger=PropertyChanged}"/>
-            
+
             <TextBlock Grid.Column="0" Grid.Row ="2" Text="G" HorizontalAlignment="Center"/>
             <Slider x:Name="GreenSlider" Grid.Column ="1" Grid.Row ="2" Maximum="255"/>
             <TextBox Grid.Column="2" Grid.Row ="2" Text ="{Binding ElementName=GreenSlider,Path=Value,UpdateSourceTrigger=PropertyChanged}"/>
-            
+
             <TextBlock Grid.Column="0" Grid.Row ="4" Text="B" HorizontalAlignment="Center"/>
             <Slider x:Name="BlueSlider" Grid.Column ="1" Grid.Row ="4" Maximum="255"/>
             <TextBox Grid.Column="2" Grid.Row ="4" Text ="{Binding ElementName=BlueSlider,Path=Value,UpdateSourceTrigger=PropertyChanged}"/>
-            
+
+            <ComboBox ItemsSource="{Binding}" SelectedValue="{Binding Color}" Margin="44,5,0,0" Height="24" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="155" Grid.ColumnSpan="3" Grid.Row="5">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Border Width="20" Height="Auto" Margin="5,0" BorderThickness="1" BorderBrush="Black" Loaded="Border_Loaded"  >
+                                <Border.Background>
+                                    <SolidColorBrush Color="{Binding Color}"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
         </Grid>
     </Grid>
 </Window>

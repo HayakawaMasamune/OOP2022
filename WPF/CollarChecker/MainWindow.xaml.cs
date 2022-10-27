@@ -34,5 +34,20 @@ namespace CollarChecker {
             public Color Color { get; set; }
             public string Name { get; set; }
         }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            colorLabel.Background = new SolidColorBrush(Color.FromRgb((byte)RedSlider.Value, (byte)GreenSlider.Value, (byte)BlueSlider.Value));
+        }
+
+        private void Border_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            //colorLabel.Background = new SolidColorBrush(colorbox.SelectedItem);
+        }
     }
 }

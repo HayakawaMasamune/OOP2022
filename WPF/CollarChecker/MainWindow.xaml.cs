@@ -34,13 +34,25 @@ namespace CollarChecker {
             colorLabel.Background = new SolidColorBrush(Color.FromRgb((byte)RedSlider.Value, (byte)GreenSlider.Value, (byte)BlueSlider.Value));
         }
 
+        //テキストボックスの値を元に色を設定
+        private void setColor(object sender)
+        {
+
+            var mycolor = (MyColor)((ComboBox)sender).SelectedItem;
+            var color = mycolor.Color;
+            var name = mycolor.Name;
+            colorLabel.Background = new SolidColorBrush(Color.FromRgb(color.R, color.G, color.B));
+        }
+
+
         private void Border_Loaded(object sender, RoutedEventArgs e)
         {
-           
+            
         }
 
         private void ComboBox_SelectionChanged(object sender,SelectionChangedEventArgs e)
         {
+
             var mycolor = (MyColor)((ComboBox)sender).SelectedItem;
             var color = mycolor.Color;
             var name = mycolor.Name;
@@ -48,8 +60,15 @@ namespace CollarChecker {
             RedSlider.Value = color.R;
             GreenSlider.Value = color.G;
             BlueSlider.Value = color.B;
+
+            
+
         }
-       
+
+        private void Stock_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
     /// <summary>

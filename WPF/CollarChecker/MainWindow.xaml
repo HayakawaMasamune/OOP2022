@@ -41,15 +41,15 @@
             <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center"
                    Text="R" />
             <Slider  Grid.Row="1" Grid.Column="1" 
-                 x:Name="RedSlider" 
+                 x:Name="RedSlider" IsSnapToTickEnabled="True" 
                  Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged"/>
-            <TextBox Grid.Row="1" Grid.Column="3" 
-                 Text="{Binding ElementName=RedSlider,Path=Value ,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Grid.Column="2" 
+                 Text="{Binding ElementName=RedSlider,Path=Value ,UpdateSourceTrigger=PropertyChanged}" Margin="0,15,0,1" Grid.RowSpan="2"/>
 
             <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center"
                    Text="G" />
             <Slider Grid.Row="3" Grid.Column="1" 
-                x:Name="GreenSlider" 
+                x:Name="GreenSlider" IsSnapToTickEnabled="True" 
                  Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged"/>
             <TextBox Grid.Row="3" Grid.Column="2" 
                  Text="{Binding ElementName=GreenSlider,Path=Value ,UpdateSourceTrigger=PropertyChanged}"/>
@@ -57,11 +57,11 @@
             <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center"
                    Text="B" />
             <Slider Grid.Row="5" Grid.Column="1" 
-                x:Name="BlueSlider" 
+                x:Name="BlueSlider" IsSnapToTickEnabled="True" 
                 Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged"/>
             <TextBox Grid.Row="5" Grid.Column="2" 
                  Text="{Binding ElementName=BlueSlider,Path=Value ,UpdateSourceTrigger=PropertyChanged}"/>
-            <ComboBox x:Name="colorbox" Grid.Row="6" Grid.Column ="1" ItemsSource="{Binding}" SelectedValue="{Binding Color}" Height="20" VerticalAlignment="Top" VerticalContentAlignment="Center"  HorizontalAlignment="Left"  Width="140" SelectedItem=""  Margin="5"  SelectionChanged ="ComboBox_SelectionChanged" >
+            <ComboBox x:Name="colorbox" Grid.Row="6" ItemsSource="{Binding}" SelectedValue="{Binding Color}" Height="20" VerticalAlignment="Top" VerticalContentAlignment="Center"  HorizontalAlignment="Left"  Width="140" SelectedItem=""  Margin="0,16,0,0"  SelectionChanged ="ComboBox_SelectionChanged" Grid.ColumnSpan="2" Grid.Column="1" >
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -86,8 +86,9 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Stock_Click" Content="STOCK" FontSize="10" Margin="5,10,5,135" Click="Stock_Click" Width="130"/>
-            <ListBox x:Name="stockList" Width="130" Margin="20,36,21,10" RenderTransformOrigin="0.714,0.104"/>
+            <Button  Content="STOCK" FontSize="10" Margin="10,5,92,128" Click="Stock_Click" />
+            <Button  Content="DELETE" FontSize="10" Margin="92,5,10,128" Click="Delete_Click" />
+            <ListBox x:Name="StockList" Margin="10,41,10,5" RenderTransformOrigin="0.714,0.104"/>
 
         </Grid>
     </Grid>

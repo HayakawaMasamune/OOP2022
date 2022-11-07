@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
@@ -59,7 +60,7 @@ namespace CollarChecker {
             colorLabel.Background = new SolidColorBrush(Color.FromRgb(color.R, color.G, color.B));
             RedSlider.Value = color.R;
             GreenSlider.Value = color.G;
-            BlueSlider.Value = color.B;
+            //BlueSlider.Value = color.B;
 
             
 
@@ -67,7 +68,22 @@ namespace CollarChecker {
 
         private void Stock_Click(object sender, RoutedEventArgs e)
         {
+            var mycolor = (MyColor)colorbox.SelectedItem;
+            var color = mycolor.Color;
+            var colorR = RedSlider.Value;
+            var colorG = GreenSlider.Value;
+            var colorB = BlueSlider.Value;
+            var colorRGB = "R:" + colorR + "G:" +  colorG + "B:" +  colorB;
+            List<string> colors = new List<string>();
+            colors.Add(colorRGB);
 
+            foreach (var item in colors) {
+                StockList.Items.Add(item);
+            }
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            StockList.Items.RemoveAt(0);
         }
     }
 

@@ -99,8 +99,21 @@ namespace ColorChecker {
             //}
 
         }
+        private MyColor getMyColor(byte r,byte g, byte b)
+        {
+            return new MyColor {
+                Color = Color.FromRgb(r, g, b),
+                Name = ((IEnumerable<MyColor>)DataContext)
+                                .Where(c => c.Color.R == r &&
+                                            c.Color.G == g &&
+                                            c.Color.B == b)
+                                .Select(c => c.Name).FirstOrDefault(),
+            };
+        }
+
         private void stockList_SelectionChanged(object sender,SelectionChangedEventArgs e)
         {
+            if (StockList.SelectedIndex == -1) return;
             RedSlider.Value = colorList[StockList.SelectedIndex].Color.R;
             GreenSlider.Value = colorList[StockList.SelectedIndex].Color.G;
             BlueSlider.Value = colorList[StockList.SelectedIndex].Color.B;
@@ -114,10 +127,14 @@ namespace ColorChecker {
             public Color Color { get; set; }
             public string Name { get; set; }
         }
-
+        //DELETE
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
+            var delIndex = StockList.SelectedIndex;
+            if (StockList.SelectedIndex == -1) return;
 
+            StockList.Items.RemoveAt(StockList.SelectedIndex);
+            colorList.RemoveAt(delIndex);
         }
     }
 }

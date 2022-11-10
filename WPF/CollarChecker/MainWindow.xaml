@@ -1,4 +1,4 @@
-﻿<Window x:Class="CollarChecker.MainWindow"
+﻿<Window x:Class="ColorChecker.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -52,7 +52,7 @@
                 x:Name="GreenSlider" IsSnapToTickEnabled="True" 
                  Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged"/>
             <TextBox Grid.Row="3" Grid.Column="2" 
-                 Name="gValue" Text="{Binding ElementName=GreenSlider,Path=Value ,UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged"/>
+                 Name="gValue" Text="{Binding ElementName=GreenSlider,Path=Value ,UpdateSourceTrigger=PropertyChanged}"/>
 
             <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center"
                    Text="B" />

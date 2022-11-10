@@ -44,7 +44,7 @@
                  x:Name="RedSlider" IsSnapToTickEnabled="True" 
                  Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged"/>
             <TextBox Grid.Column="2" 
-                 Text="{Binding ElementName=RedSlider,Path=Value ,UpdateSourceTrigger=PropertyChanged}" Margin="0,15,0,1" Grid.RowSpan="2"/>
+                Name="rValue" Text="{Binding ElementName=RedSlider,Path=Value ,UpdateSourceTrigger=PropertyChanged}" Margin="0,15,0,1" Grid.RowSpan="2"/>
 
             <TextBlock Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center"
                    Text="G" />
@@ -52,7 +52,7 @@
                 x:Name="GreenSlider" IsSnapToTickEnabled="True" 
                  Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged"/>
             <TextBox Grid.Row="3" Grid.Column="2" 
-                 Text="{Binding ElementName=GreenSlider,Path=Value ,UpdateSourceTrigger=PropertyChanged}"/>
+                 Name="gValue" Text="{Binding ElementName=GreenSlider,Path=Value ,UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged"/>
 
             <TextBlock Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center"
                    Text="B" />
@@ -60,7 +60,7 @@
                 x:Name="BlueSlider" IsSnapToTickEnabled="True" 
                 Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged"/>
             <TextBox Grid.Row="5" Grid.Column="2" 
-                 Text="{Binding ElementName=BlueSlider,Path=Value ,UpdateSourceTrigger=PropertyChanged}"/>
+                 Name="bValue" Text="{Binding ElementName=BlueSlider,Path=Value ,UpdateSourceTrigger=PropertyChanged}"/>
             <ComboBox x:Name="colorbox" Grid.Row="6" ItemsSource="{Binding}" SelectedValue="{Binding Color}" Height="20" VerticalAlignment="Top" VerticalContentAlignment="Center"  HorizontalAlignment="Left"  Width="140" SelectedItem=""  Margin="0,16,0,0"  SelectionChanged ="ComboBox_SelectionChanged" Grid.ColumnSpan="2" Grid.Column="1" >
                 <ComboBox.ItemTemplate>
                     <DataTemplate>

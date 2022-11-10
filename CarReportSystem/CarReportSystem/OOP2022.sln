@@ -57,7 +57,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleSlider", "..\..\WPF\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleUnitConverter", "..\..\WPF\SampleUnitConverter\SampleUnitConverter.csproj", "{0B42C0A5-9F9F-43E3-9FD2-5DE3E2FBA7F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollarChecker", "..\..\WPF\CollarChecker\CollarChecker.csproj", "{6929B989-A56B-4EB9-8414-FCBE471052F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorChecker", "..\..\WPF\CollarChecker\ColorChecker.csproj", "{6929B989-A56B-4EB9-8414-FCBE471052F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

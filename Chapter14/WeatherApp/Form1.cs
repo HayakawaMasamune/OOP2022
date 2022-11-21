@@ -17,246 +17,252 @@ namespace WeatherApp {
         {
             InitializeComponent();
         }
-        public int areaCode; //エリアコード
+        
+        public string areaCode; //エリアコード
 
-        //取得クリック
-        private void btWeatherGet_Click(int areacde)
+
+        //天気取得
+        private void WeatherGet(string areacode)
         {
-           
             var wc = new WebClient() {
                 Encoding = Encoding.UTF8
             };
 
-            var dString = wc.DownloadString($"https://www.jma.go.jp/bosai/forecast/data/overview_forecast/{areacde}.json");
+            var dString = wc.DownloadString($"https://www.jma.go.jp/bosai/forecast/data/overview_forecast/{areacode}.json");
 
             var json = JsonConvert.DeserializeObject<Rootobject>(dString);
 
-            tbpublishingOffice.Text = json.publishingOffice;
+            publishingOffice.Text = json.publishingOffice;
             tbWeatherInfo.Text = json.text;
-            DateTime.Text = json.reportDatetime.ToString();
+            DateTime1.Text = json.reportDatetime.ToString();
         }
 
+        //地域からエリアコード
         private void cbPlace_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
             if (cbArea.Text == "北海道地方") {
                 switch (cbPlace.SelectedIndex) {
                     case 0:
-
-                        areaCode = 011000;
+                        areaCode = "011000";
                         break;
                     case 1:
-                        areaCode = 012000;
+                        areaCode = "012000";
                         break;
                     case 2:
-                        areaCode = 013000;
+                        areaCode = "013000";
+                        break;
+                    case 3:
+                        areaCode = "014030";
                         break;
                     case 4:
-                        areaCode = 014030;
+                        areaCode = "014100";
                         break;
                     case 5:
-                        areaCode = 014100;
+                        areaCode = "015000";
                         break;
                     case 6:
-                        areaCode = 015000;
+                        areaCode = "016000";
                         break;
                     case 7:
-                        areaCode = 016000;
-                        break;
-                    case 8:
-                        areaCode = 017000;
+                        areaCode = "017000";
                         break;
                 }
-                btWeatherGet_Click(areaCode);
+
+                WeatherGet(areaCode);
 
             } else if (cbArea.Text == "東北地方") {
                 switch (cbPlace.SelectedIndex) {
                     case 0:
-                        areaCode = 020000;
+                        areaCode = "020000";
                         break;
                     case 1:
-                        areaCode = 030000;
+                        areaCode = "030000";
                         break;
                     case 2:
-                        areaCode = 040000;
+                        areaCode = "040000";
                         break;
                     case 4:
-                        areaCode = 050000;
+                        areaCode = "050000";
                         break;
                     case 5:
-                        areaCode = 060000;
+                        areaCode = "060000";
                         break;
                     case 6:
-                        areaCode = 070000;
+                        areaCode = "070000";
                         break;
                 }
-                btWeatherGet_Click(areaCode);
+                WeatherGet(areaCode);
 
             } else if (cbArea.Text == "関東甲信地方") {
                 switch (cbPlace.SelectedIndex) {
                     case 0:
-                        areaCode = 080000;
+                        areaCode = "080000";
                         break;
                     case 1:
-                        areaCode = 090000;
+                        areaCode = "090000";
                         break;
                     case 2:
-                        areaCode = 100000;
+                        areaCode = "100000";
                         break;
                     case 3:
-                        areaCode = 110000;
+                        areaCode = "110000";
                         break;
                     case 4:
-                        areaCode = 120000;
+                        areaCode = "120000";
                         break;
                     case 5:
-                        areaCode = 130000;
+                        areaCode = "130000";
                         break;
                     case 6:
-                        areaCode = 140000;
+                        areaCode = "140000";
                         break;
                     case 7:
-                        areaCode = 190000;
+                        areaCode = "190000";
                         break;
                     case 8:
-                        areaCode = 200000;
+                        areaCode = "200000";
                         break;
                 }
-                btWeatherGet_Click(areaCode);
+                WeatherGet(areaCode);
 
             } else if (cbArea.Text == "東海地方") {
                 switch (cbPlace.SelectedIndex) {
                     case 0:
-                        areaCode = 210000;
+                        areaCode = "210000";
                         break;
                     case 1:
-                        areaCode = 220000;
+                        areaCode = "220000";
                         break;
                     case 2:
-                        areaCode = 230000;
+                        areaCode = "230000";
                         break;
                     case 3:
-                        areaCode = 240000;
+                        areaCode = "240000";
                         break;
                 }
-                btWeatherGet_Click(areaCode);
+                WeatherGet(areaCode);
 
             } else if (cbArea.Text == "北陸地方") {
                 switch (cbPlace.SelectedIndex) {
                     case 0:
-                        areaCode = 150000;
+                        areaCode = "150000";
                         break;
                     case 1:
-                        areaCode = 160000;
+                        areaCode = "160000";
                         break;
                     case 2:
-                        areaCode = 170000;
+                        areaCode = "170000";
                         break;
                     case 3:
-                        areaCode = 180000;
+                        areaCode = "180000";
                         break;
                 }
-                btWeatherGet_Click(areaCode);
+                WeatherGet(areaCode);
 
             } else if (cbArea.Text == "近畿地方") {
                 switch (cbPlace.SelectedIndex) {
                     case 0:
-                        areaCode = 250000;
+                        areaCode = "250000";
                         break;
                     case 1:
-                        areaCode = 260000;
+                        areaCode = "260000";
                         break;
                     case 2:
-                        areaCode = 270000;
+                        areaCode = "270000";
                         break;
                     case 3:
-                        areaCode = 280000;
+                        areaCode = "280000";
                         break;
                     case 4:
-                        areaCode = 290000;
+                        areaCode = "290000";
                         break;
                     case 5:
-                        areaCode = 300000;
+                        areaCode = "300000";
                         break;
                 }
-                btWeatherGet_Click(areaCode);
+                WeatherGet(areaCode);
 
             } else if (cbArea.Text == "中国地方") {
                 switch (cbPlace.SelectedIndex) {
                     case 0:
-                        areaCode = 310000;
+                        areaCode = "310000";
                         break;
                     case 1:
-                        areaCode = 320000;
+                        areaCode = "320000";
                         break;
                     case 2:
-                        areaCode = 330000;
+                        areaCode = "330000";
                         break;
                     case 3:
-                        areaCode = 340000;
+                        areaCode = "340000";
                         break;
                 }
-                btWeatherGet_Click(areaCode);
+                WeatherGet(areaCode);
 
             } else if (cbArea.Text == "九州北部地方") {
                 switch (cbPlace.SelectedIndex) {
                     case 0:
-                        areaCode = 350000;
+                        areaCode = "350000";
                         break;
                     case 1:
-                        areaCode = 400000;
+                        areaCode = "400000";
                         break;
                     case 2:
-                        areaCode = 410000;
+                        areaCode = "410000";
                         break;
                     case 3:
-                        areaCode = 420000;
+                        areaCode = "420000";
                         break;
                     case 4:
-                        areaCode = 430000;
+                        areaCode = "430000";
                         break;
                     case 5:
-                        areaCode = 440000;
+                        areaCode = "440000";
                         break;
                 }
-                btWeatherGet_Click(areaCode);
+                WeatherGet(areaCode);
 
             } else if (cbArea.Text == "九州南部・奄美地方") {
                 switch (cbPlace.SelectedIndex) {
                     case 0:
-                        areaCode = 450000;
+                        areaCode = "450000";
                         break;
                     case 1:
-                        areaCode = 460000;
+                        areaCode = "460000";
                         break;
                     case 2:
-                        areaCode = 460100;
+                        areaCode = "460100";
                         break;
                 }
-                btWeatherGet_Click(areaCode);
+                WeatherGet(areaCode);
             } 
             else if (cbArea.Text == "沖縄地方") {
                 switch (cbPlace.SelectedIndex) {
                     case 0:
-                        areaCode = 471000;
+                        areaCode = "471000";
                         break;
                     case 1:
-                        areaCode = 472000;
+                        areaCode = "472000";
                         break;
                     case 2:
-                        areaCode = 473000;
+                        areaCode = "473000";
                         break;
                     case 3:
-                        areaCode = 474000;
+                        areaCode = "474000";
                         break;
                 }
-                btWeatherGet_Click(areaCode);
+                WeatherGet(areaCode);
             }         
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //背景
+            BackgroundImageLayout = ImageLayout.Stretch;
+            BackgroundImage = Image.FromFile("東京.jpg");
 
+            //地方コンボボックス
             cbArea.Items.Add("北海道地方");//0
             cbArea.Items.Add("東北地方");//1
             cbArea.Items.Add("関東甲信地方");//2
@@ -268,11 +274,17 @@ namespace WeatherApp {
             cbArea.Items.Add("九州北部地方");//8
             cbArea.Items.Add("九州南部・奄美地方");//9
             cbArea.Items.Add("沖縄地方");//10   
+
+            cbArea.SelectedIndex = 2;
+            cbPlace.SelectedIndex = 5;
+            WeatherGet(areaCode);
         }
-   
+     //地域コンボボックス
         private void Select_Click(object sender, EventArgs e)
         {
-            cbPlace.Items.Clear();//初期化
+            //初期化
+            cbPlace.Items.Clear();
+            cbPlace.Text = null;
 
             switch (cbArea.SelectedIndex) {
                 case 0:

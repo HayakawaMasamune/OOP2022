@@ -19,6 +19,7 @@ namespace WeatherApp {
         }
         
         public string areaCode; //エリアコード
+        public string wCode;
 
 
         //天気取得
@@ -28,14 +29,37 @@ namespace WeatherApp {
                 Encoding = Encoding.UTF8
             };
 
-            var dString = wc.DownloadString($"https://www.jma.go.jp/bosai/forecast/data/overview_forecast/{areacode}.json");
+           try {
 
-            var json = JsonConvert.DeserializeObject<Rootobject>(dString);
+                var dString = wc.DownloadString($"https://www.jma.go.jp/bosai/forecast/data/overview_forecast/{areacode}.json");
+                var wString = wc.DownloadString($"https://www.jma.go.jp/bosai/forecast/data/forecast/{areacode}.json");
 
-            publishingOffice.Text = json.publishingOffice;
-            tbWeatherInfo.Text = json.text;
-            DateTime1.Text = json.reportDatetime.ToString();
-        }
+                var json = JsonConvert.DeserializeObject<Rootobject>(dString);
+
+                publishingOffice.Text = json.publishingOffice;
+                tbWeatherInfo.Text = json.text;
+                DateTime1.Text = json.reportDatetime.ToString();
+
+                var json2 = JsonConvert.DeserializeObject<Class[]>(wString);
+
+                var jsonPic = json2[1].timeSeries[0].areas[0].weatherCodes[0];
+                var jsonPic2 = json2[1].timeSeries[0].areas[0].weatherCodes[1];
+                var jsonPic3 = json2[1].timeSeries[0].areas[0].weatherCodes[2];
+
+                pictureBox1.ImageLocation = $"https://www.jma.go.jp/bosai/forecast/img/{jsonPic}.png";
+                pictureBox2.ImageLocation = $"https://www.jma.go.jp/bosai/forecast/img/{jsonPic2}.png";
+                pictureBox3.ImageLocation = $"https://www.jma.go.jp/bosai/forecast/img/{jsonPic3}.png";
+
+            } catch (IndexOutOfRangeException e) {
+
+                tbWeatherInfo.Text = "ERROR";
+
+           }catch (Exception){
+
+                tbWeatherInfo.Text = "ERROR";
+
+            }       
+        } 
 
         //地域からエリアコード
         private void cbPlace_SelectedIndexChanged(object sender, EventArgs e)
@@ -200,6 +224,23 @@ namespace WeatherApp {
                 }
                 WeatherGet(areaCode);
 
+            } else if (cbArea.Text == "四国地方") {
+                switch (cbPlace.SelectedIndex) {
+                    case 0:
+                        areaCode = "360000";
+                        break;
+                    case 1:
+                        areaCode = "370000";
+                        break;
+                    case 2:
+                        areaCode = "380000";
+                        break;
+                    case 3:
+                        areaCode = "390000";
+                        break;
+                }
+                WeatherGet(areaCode);
+
             } else if (cbArea.Text == "九州北部地方") {
                 switch (cbPlace.SelectedIndex) {
                     case 0:
@@ -285,6 +326,15 @@ namespace WeatherApp {
             //初期化
             cbPlace.Items.Clear();
             cbPlace.Text = null;
+            
+
+            publishingOffice.Text = "－－－－－";
+            tbWeatherInfo.Text = null;
+            DateTime1.Text = "－－－－－";
+            pictureBox1.ImageLocation = null;
+            pictureBox2.ImageLocation = null;
+            pictureBox3.ImageLocation = null;
+
 
             switch (cbArea.SelectedIndex) {
                 case 0:
@@ -365,7 +415,9 @@ namespace WeatherApp {
                     cbPlace.Items.Add("八重山地方");//3
                     break;
             }
+
+
         }
     }
+
 }
-       
